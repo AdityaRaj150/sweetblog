@@ -1,0 +1,18 @@
+
+<%-include("partials/header.ejs") %>
+<% if (locals.allBlogs) {
+
+} %>
+<div class="blogBox">
+<%  if (locals.allBlogs) { 
+        for (i=0; i<allBlogs.length; i++ ) { %>
+            <div class="blog">
+                
+                <p><%= allBlogs[i] %></p>
+                <img src="./delete.png">
+            </div>
+        <% } 
+ }  %>
+</div>
+
+<%-include ("partials/footer.ejs") %>
