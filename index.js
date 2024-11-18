@@ -1,19 +1,17 @@
-import express from "express";
-import bodyParser from "body-parser";
-import exp from "constants";
+const express = require("express")
+require("dotenv").config()
 
 const app = express();
-const port = 3001
 var blogList = []
 
+const port = process.env.PORT || 3000
 app.use(express.static("public"));  
-
-app.get("/", (req, res) => {
+app.use(express.json());
+app.get("/", (_, res) => {
     blogList = [];
     res.render("index.ejs");
 })
 
-app.use(bodyParser.urlencoded({extended: true}));
 app.post("/add", (req, res) => {
     var content = req.body.message;
     blogList.push(content);
