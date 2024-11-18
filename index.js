@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import exp from "constants";
 
 const app = express();
-const port = 3001;
+const port = 3001
 var blogList = []
 
 app.use(express.static("public"));  
